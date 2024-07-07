@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<resources>
+<!--    line 5 is not in documentation of facebook that is causing an error!-->
+    <string name="app_name">Messenger Flutter</string>
+    <string name="facebook_app_id">849888307186986</string>
+    <string name="fb_login_protocol_scheme">fb849888307186986</string>
+    <string name="facebook_client_token">0cbcc170d9ce1e3d24c59bf51ccaf694fb</string>
+
+
+</resources>

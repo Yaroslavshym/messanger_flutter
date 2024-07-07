@@ -1,5 +1,8 @@
 plugins {
     id "com.android.application"
+    // START: FlutterFire Configuration
+    id 'com.google.gms.google-services'
+    // END: FlutterFire Configuration
     id "kotlin-android"
     id "dev.flutter.flutter-gradle-plugin"
 }
@@ -45,7 +48,7 @@ android {
         applicationId "com.yaroslav.messanger_flutter.messanger_flutter"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-        minSdkVersion flutter.minSdkVersion
+        minSdkVersion 23
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
@@ -63,5 +66,15 @@ android {
 flutter {
     source '../..'
 }
+dependencies {
+    implementation 'com.google.firebase:firebase-auth:latest_version'
+    implementation 'com.google.android.gms:play-services-auth:latest_version'
+    implementation 'com.facebook.android:facebook-applinks:latest.release'
+    implementation 'com.facebook.android:facebook-common:latest.release'
+    implementation 'com.facebook.android:facebook-core:latest.release'
+    implementation 'com.facebook.android:facebook-gamingservices:latest.release'
+    implementation 'com.facebook.android:facebook-login:latest.release'
+    implementation 'com.facebook.android:facebook-messenger:latest.release'
+    implementation 'com.facebook.android:facebook-share:latest.release'
 
-dependencies {}
+}
