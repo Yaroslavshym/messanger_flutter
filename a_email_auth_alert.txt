@@ -1,0 +1,22 @@
+on FirebaseAuthException catch (e) {
+      // TODO: remove widgets 'MyAlertDialog' from domain
+      if (e.code == 'weak-password') {
+        MyAlertDialog(
+          context: context,
+          text: 'Failed to sign up!\n Your password is too weak!',
+          buttonText: 'OK',
+        ).show();
+      } else if (e.code == 'email-already-in-use') {
+        MyAlertDialog(
+          context: context,
+          text: 'Failed to sign up!\n This email is already used!',
+          buttonText: 'OK',
+        ).show();
+      } else {
+        MyAlertDialog(
+          context: context,
+          text: 'Failed to sign in!\nFirebaseAuthException\n$e\n${e.code}',
+          buttonText: 'OK',
+        ).show();
+      }
+    }

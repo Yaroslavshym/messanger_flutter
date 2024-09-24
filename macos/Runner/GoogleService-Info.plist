@@ -6,6 +6,8 @@
 	<string>728243728692-gisohgdg56qhdsl913cihopkpr3j98gk.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
 	<string>com.googleusercontent.apps.728243728692-gisohgdg56qhdsl913cihopkpr3j98gk</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>728243728692-0b08qdmbcrjjlll0r50dcr3quvtckmu2.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
 	<string>AIzaSyB4vdvrWuwoVCxL-n_9KxjOpVHNssCuANM</string>
 	<key>GCM_SENDER_ID</key>
@@ -29,6 +31,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:728243728692:ios:6076bdaa35aa92d7cf3561</string>
+	<string>1:728243728692:ios:bcae677b3d0676d5cf3561</string>
+	<key>DATABASE_URL</key>
+	<string>https://messanger-flutter-e2276-default-rtdb.europe-west1.firebasedatabase.app</string>
 </dict>
 </plist>

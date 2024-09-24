@@ -1,13 +1,14 @@
 {
   "project_info": {
     "project_number": "728243728692",
+    "firebase_url": "https://messanger-flutter-e2276-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "messanger-flutter-e2276",
     "storage_bucket": "messanger-flutter-e2276.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:728243728692:android:229f70ffb908d75ecf3561",
+        "mobilesdk_app_id": "1:728243728692:android:d1c79668e2f0af84cf3561",
         "android_client_info": {
           "package_name": "com.yaroslav.messanger_flutter.messanger_flutter"
         }
@@ -29,6 +30,13 @@
             {
               "client_id": "728243728692-da4i5kka6gspa17vr3ps8p294vs4jvci.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "728243728692-6gmvrano1h4tfdg6c4gclh9r10o69785.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.yaroslav.messanger-flutter.RunnerTests"
+              }
             }
           ]
         }

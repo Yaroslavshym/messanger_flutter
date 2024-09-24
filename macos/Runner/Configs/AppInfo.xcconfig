@@ -11,4 +11,4 @@ PRODUCT_NAME = messanger_flutter
 PRODUCT_BUNDLE_IDENTIFIER = com.yaroslav.messangerflutter.messangerFlutter
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2024 com.yaroslav.messanger_flutter. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2024 com.yaroslavshym.messanger_flutter. All rights reserved.

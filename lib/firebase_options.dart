@@ -40,49 +40,57 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyC3Byb2r2u56w83az4iOqRd7VGEklKYcMc',
-    appId: '1:728243728692:web:92ed6485c67e533acf3561',
-    messagingSenderId: '728243728692',
-    projectId: 'messanger-flutter-e2276',
-    authDomain: 'messanger-flutter-e2276.firebaseapp.com',
-    storageBucket: 'messanger-flutter-e2276.appspot.com',
-  );
-
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCADs6OkQm2gkGeQy0JbBAKqWRB-OsoOqM',
-    appId: '1:728243728692:android:229f70ffb908d75ecf3561',
+    appId: '1:728243728692:android:d1c79668e2f0af84cf3561',
     messagingSenderId: '728243728692',
     projectId: 'messanger-flutter-e2276',
+    databaseURL: 'https://messanger-flutter-e2276-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'messanger-flutter-e2276.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyB4vdvrWuwoVCxL-n_9KxjOpVHNssCuANM',
-    appId: '1:728243728692:ios:6076bdaa35aa92d7cf3561',
+    appId: '1:728243728692:ios:bcae677b3d0676d5cf3561',
     messagingSenderId: '728243728692',
     projectId: 'messanger-flutter-e2276',
+    databaseURL: 'https://messanger-flutter-e2276-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'messanger-flutter-e2276.appspot.com',
+    androidClientId: '728243728692-0b08qdmbcrjjlll0r50dcr3quvtckmu2.apps.googleusercontent.com',
     iosClientId: '728243728692-gisohgdg56qhdsl913cihopkpr3j98gk.apps.googleusercontent.com',
     iosBundleId: 'com.yaroslav.messangerflutter.messangerFlutter',
   );
 
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyB4vdvrWuwoVCxL-n_9KxjOpVHNssCuANM',
-    appId: '1:728243728692:ios:6076bdaa35aa92d7cf3561',
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyC3Byb2r2u56w83az4iOqRd7VGEklKYcMc',
+    appId: '1:728243728692:web:3e1fa45e303348ebcf3561',
     messagingSenderId: '728243728692',
     projectId: 'messanger-flutter-e2276',
+    authDomain: 'messanger-flutter-e2276.firebaseapp.com',
+    databaseURL: 'https://messanger-flutter-e2276-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'messanger-flutter-e2276.appspot.com',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyB4vdvrWuwoVCxL-n_9KxjOpVHNssCuANM',
+    appId: '1:728243728692:ios:bcae677b3d0676d5cf3561',
+    messagingSenderId: '728243728692',
+    projectId: 'messanger-flutter-e2276',
+    databaseURL: 'https://messanger-flutter-e2276-default-rtdb.europe-west1.firebasedatabase.app',
+    storageBucket: 'messanger-flutter-e2276.appspot.com',
+    androidClientId: '728243728692-0b08qdmbcrjjlll0r50dcr3quvtckmu2.apps.googleusercontent.com',
     iosClientId: '728243728692-gisohgdg56qhdsl913cihopkpr3j98gk.apps.googleusercontent.com',
     iosBundleId: 'com.yaroslav.messangerflutter.messangerFlutter',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
     apiKey: 'AIzaSyC3Byb2r2u56w83az4iOqRd7VGEklKYcMc',
-    appId: '1:728243728692:web:5587493b9620c14acf3561',
+    appId: '1:728243728692:web:99ced116031178eacf3561',
     messagingSenderId: '728243728692',
     projectId: 'messanger-flutter-e2276',
     authDomain: 'messanger-flutter-e2276.firebaseapp.com',
+    databaseURL: 'https://messanger-flutter-e2276-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'messanger-flutter-e2276.appspot.com',
   );
+
 }
