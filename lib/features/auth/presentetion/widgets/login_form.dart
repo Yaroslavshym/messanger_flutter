@@ -1,8 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../config/theme/current_theme_provider.dart';
 import '../../domain/usecases/google_auth_use_case.dart';
+import 'alert_dialog.dart';
 import 'button.dart';
 import 'text_form_field.dart';
 
@@ -101,10 +103,20 @@ class _LoginFormState extends State<LoginForm> with TickerProviderStateMixin {
               changeWidthBy: -60,
               buttonText: 'Google!',
               buttonPressed: () async {
-                await GoogleAuthUseCase().signInWithGoogle();
-
-                // TODO: create func isLogined? and check before moving to next page
-                Navigator.pushReplacementNamed(context, '/MainPage');
+                try {
+                  final bool isSuccessful = await GoogleAuthUseCase()
+                          .signInWithGoogle()
+                          .runtimeType ==
+                      UserCredential;
+                  if (isSuccessful) {
+                    Navigator.pushReplacementNamed(context, '/MainPage');
+                  }
+                } catch (e) {
+                  MyAlertDialog(
+                    text: e.toString(),
+                    buttonText: 'OK',
+                  ).show(context);
+                }
               })
         ],
       ),
