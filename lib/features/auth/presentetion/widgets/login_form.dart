@@ -104,10 +104,10 @@ class _LoginFormState extends State<LoginForm> with TickerProviderStateMixin {
               buttonText: 'Google!',
               buttonPressed: () async {
                 try {
-                  final bool isSuccessful = await GoogleAuthUseCase()
-                          .signInWithGoogle()
-                          .runtimeType ==
-                      UserCredential;
+                  var userCredential =
+                      await GoogleAuthUseCase().signInWithGoogle();
+                  final bool isSuccessful =
+                      userCredential.runtimeType == UserCredential;
                   if (isSuccessful) {
                     Navigator.pushReplacementNamed(context, '/MainPage');
                   }
