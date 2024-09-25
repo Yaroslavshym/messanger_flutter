@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -6,7 +8,8 @@ class RemoteGoogleAuth {
     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
     // Obtain the auth details from the request
-    final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
+    final GoogleSignInAuthentication? googleAuth =
+        await googleUser?.authentication;
 
     // Create a new credential
     final credential = GoogleAuthProvider.credential(
@@ -15,12 +18,7 @@ class RemoteGoogleAuth {
     );
 
     // Once signed in, return the UserCredential
-    var ans =  await FirebaseAuth.instance.signInWithCredential(credential);
-
-
-
-
-
+    var ans = await FirebaseAuth.instance.signInWithCredential(credential);
 
     // final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
     // final GoogleSignInAuthentication? googleAuth =
@@ -32,14 +30,8 @@ class RemoteGoogleAuth {
     //
     // var ans = await FirebaseAuth.instance.signInWithCredential(credential);
 
-    print('111111111${await ans.credential}');
     String sans = ans.toString();
-    int l = sans.length;
-    List list = [];
-    print('111111111');
-    for (int i = 1; i < 5; i++) {
-      print(sans.substring((l / 4 * (i - 1)).toInt(), (l / 4 * i).toInt()));
-    }
+    log(sans);
 
     // throw ErrorDescription(FirebaseAuth.instance.currentUser.toString());
 

@@ -96,15 +96,16 @@ class _LoginFormState extends State<LoginForm> with TickerProviderStateMixin {
           ),
           const SizedBox(height: 10),
           // google sign in buttons
-          widget.isLogin
-              ? MyButton(
-                  changeHeightBy: -30,
-                  changeWidthBy: -60,
-                  buttonText: 'Google!',
-                  buttonPressed: () async {
-                    await GoogleAuthUseCase().signInWithGoogle();
-                  })
-              : const SizedBox(),
+          MyButton(
+              changeHeightBy: -30,
+              changeWidthBy: -60,
+              buttonText: 'Google!',
+              buttonPressed: () async {
+                await GoogleAuthUseCase().signInWithGoogle();
+
+                // TODO: create func isLogined? and check before moving to next page
+                Navigator.pushReplacementNamed(context, '/MainPage');
+              })
         ],
       ),
     );
