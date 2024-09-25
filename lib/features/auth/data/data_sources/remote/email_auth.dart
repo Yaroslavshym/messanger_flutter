@@ -52,7 +52,6 @@ class RemoteEmailAuth {
             'Failed to sign in!\nFirebaseAuthException\n$e\n${e.code}');
       }
 
-      // TODO: remove widgets 'MyAlertDialog' from domain
       // if (e.code == 'user-not-found' || e.code == 'invalid-credential') {
       //   MyAlertDialog(
       //     context: context,

@@ -1,14 +1,20 @@
 import 'package:uuid/uuid.dart';
 
 class ChatEntity {
-  final String uuid = Uuid().v4();
+  String? uuid;
   final List<String> participantsUuidList;
-  final DateTime whenCreated = DateTime.now().toUtc();
+  DateTime? whenCreated;
+
   final String name;
   final String imageUrl;
   ChatEntity({
+    this.uuid,
     required this.participantsUuidList,
     required this.name,
     this.imageUrl = '',
-  }) {}
+    this.whenCreated,
+  }) {
+    uuid = uuid ?? Uuid().v4();
+    whenCreated = whenCreated ?? DateTime.now().toUtc();
+  }
 }

@@ -1,11 +1,11 @@
-import 'package:messanger_flutter/features/auth/data/repository_impl/email_auth_impl.dart';
+import 'package:messanger_flutter/features/auth/data/repository_impl/email_auth_repository_impl.dart';
 
 class EmailAuthUseCase {
   Future<bool> signUp(
       {required String emailAddress,
       required String password,
       required String name}) async {
-    return await EmailAuthImpl()
+    return await EmailAuthRepositoryImpl()
         .signUp(emailAddress: emailAddress, password: password, name: name);
   }
 
@@ -13,7 +13,7 @@ class EmailAuthUseCase {
     required String emailAddress,
     required String password,
   }) async {
-    return await EmailAuthImpl()
+    return await EmailAuthRepositoryImpl()
         .signIn(emailAddress: emailAddress, password: password);
   }
 

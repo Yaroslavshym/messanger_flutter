@@ -1,6 +1,5 @@
 import 'dart:core';
 
-// TODO: Move to data file
 import 'package:hive/hive.dart';
 
 class MyHive {

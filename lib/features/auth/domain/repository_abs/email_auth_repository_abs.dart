@@ -1,4 +1,4 @@
-abstract class EmailAuthAbs {
+abstract class EmailAuthRepositoryAbs {
   Future<bool> signUp(
       {required String emailAddress,
       required String password,

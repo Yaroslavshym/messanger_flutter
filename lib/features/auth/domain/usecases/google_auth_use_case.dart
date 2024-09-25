@@ -1,13 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
-import '../../data/repository_impl/google_auth_impl.dart';
+import '../../data/repository_impl/google_auth_repository_impl.dart';
 
 class GoogleAuthUseCase {
   Future<UserCredential> signInWithGoogle() async {
-    return GoogleAuthImpl().signInWithGoogle();
+    return GoogleAuthRepositoryImpl().signInWithGoogle();
   }
 
   Future<void> signOutFromGoogle() async {
-    await GoogleAuthImpl().signOutWithGoogle();
+    await GoogleAuthRepositoryImpl().signOutWithGoogle();
   }
 }

@@ -1,8 +1,8 @@
-import 'package:messanger_flutter/features/auth/domain/repository_abs/email_auth_abs.dart';
+import 'package:messanger_flutter/features/auth/domain/repository_abs/email_auth_repository_abs.dart';
 
 import '../data_sources/remote/email_auth.dart';
 
-class EmailAuthImpl implements EmailAuthAbs {
+class EmailAuthRepositoryImpl implements EmailAuthRepositoryAbs {
   Future<bool> signUp(
       {required String emailAddress,
       required String password,
