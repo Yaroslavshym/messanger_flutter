@@ -1,9 +1,14 @@
 Plans for this project:
 v* create conversion function for converting data received from database
-* create abs + implementations fro :
-  * CRUD operations:
-    * get
-    * put
-    * listen
-    * update
-* think about files 'repositories'
+v* create abs + implementations fro :
+  v* CRUD operations:
+    v* get
+    v* put
+    v* listen
+    v* update
+v* think about files 'repositories'
+
+
+* crete abs+implementation + usecases for message entity
+* link message entity to chat entity 
+* 

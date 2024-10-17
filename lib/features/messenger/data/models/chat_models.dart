@@ -1,9 +1,23 @@
+import 'dart:developer';
+
 import 'package:messanger_flutter/features/messenger/data/models/datetime_models.dart';
 
 import '../../domain/entities/chat_entity.dart';
 
 class ChatModels {
-  Map<dynamic, dynamic> chatEntityToMap(ChatEntity chat) {
+  List<ChatEntity> mapToList({required Map data}) {
+    List<ChatEntity> chats = [];
+    var a = data.keys;
+    for (String uuid in data.keys) {
+      var one_map = data[uuid];
+      ChatEntity chat = ChatModels().mapToChatEntity(data: one_map);
+      chats.add(chat);
+    }
+
+    return chats;
+  }
+
+  Map<String, dynamic> chatEntityToMap(ChatEntity chat) {
     return {
       "imageUrl": chat.imageUrl,
       "name": chat.name,
@@ -16,15 +30,25 @@ class ChatModels {
 
   ChatEntity mapToChatEntity({
     required Map<dynamic, dynamic> data,
-    required String uuid,
   }) {
-    return ChatEntity(
-      participantsUuidList: data["participantsUuidList"],
-      name: data["data"],
-      imageUrl: data["imageUrl"],
-      whenCreated: data["whenCreated"],
-      uuid: data["uuid"],
+    log('chat_models:  (data):     $data \n type: ${data.runtimeType}');
+    DateTime? date;
+    try {
+      date = DateTimeConversion().stringToDateTime(data["whenCreated"]);
+      print('tried successfully');
+    } catch (e) {
+      date = DateTime.now().toUtc();
+    }
+    var a = data["participantsUuidList"];
+    ChatEntity chat = ChatEntity(
+      participantsUuidList: [],
+      name: data["data"] ?? '',
+      imageUrl: data["imageUrl"] ?? '',
+      whenCreated: date,
+      uuid: data["uuid"] ?? '',
     );
+    chat.printChat();
+    return chat;
   }
 }
 
