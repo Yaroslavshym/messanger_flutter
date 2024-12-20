@@ -4,11 +4,11 @@ import 'package:provider/provider.dart';
 import '../../../../config/theme/current_theme_provider.dart';
 import '../../../messenger/domain/entities/message_entity.dart';
 
-class MessageBox extends StatelessWidget {
-  List<Widget> listOfWidgets;
+class MessageWidget extends StatelessWidget {
+  List<Widget> messageWidgetList;
   final MessageEntity message;
-  MessageBox({
-    this.listOfWidgets = const [],
+  MessageWidget({
+    this.messageWidgetList = const [],
     required this.message,
   });
 
@@ -16,19 +16,17 @@ class MessageBox extends StatelessWidget {
   Widget build(BuildContext context) {
     CurrentThemeProvider themeProvider =
         Provider.of<CurrentThemeProvider>(context);
-    Color primaryColor = themeProvider.primaryColor;
-    Color secondaryColor = themeProvider.secondaryColor;
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: secondaryColor,
+        color: themeProvider.secondaryColor,
       ),
       child: Column(
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Text('${message.whenSent.hour}:${message.whenSent.minute}'),
+              Text('${message.whenSent?.hour}:${message.whenSent?.minute}'),
             ],
           )
         ],

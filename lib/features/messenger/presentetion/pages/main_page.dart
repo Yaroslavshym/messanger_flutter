@@ -5,11 +5,16 @@ import 'package:provider/provider.dart';
 
 import '../../../../config/theme/current_theme_provider.dart';
 
-class MainPage extends StatelessWidget {
+class MainPage extends StatefulWidget {
   const MainPage({
     super.key,
   });
 
+  @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     CurrentThemeProvider themeProvider =
@@ -27,12 +32,12 @@ class MainPage extends StatelessWidget {
         body: StreamBuilder(
             stream: ChatUseCases().alwaysGetChats(),
             builder: ((BuildContext context, AsyncSnapshot snapshot) {
-              // print('${snapshot.data}');
-
+              print(
+                  'Stream builder ${snapshot.data}, ${snapshot.connectionState}');
               if (snapshot.data != null) {
                 return ListView(
                   children: [
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(

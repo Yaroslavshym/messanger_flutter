@@ -1,19 +1,39 @@
+import 'dart:developer';
+
+import 'package:messanger_flutter/core/enums/message_status.dart';
 import 'package:uuid/uuid.dart';
 
 class MessageEntity {
-  final String uuid = Uuid().v4();
-  final String chatUuid;
-  final String userUuid;
-  final DateTime whenSent = DateTime.now().toUtc();
-  bool isSeen = false;
-  bool isReceived = false;
+  String? uuid;
+  final String senderUuid;
+  final String receiverUuid;
+  DateTime? whenSent;
+
+  MessageStatus messageStatus = MessageStatus.sent;
   String text;
   String? imageUrl;
 
   MessageEntity({
-    required this.chatUuid,
-    required this.userUuid,
-    required this.text,
+    this.uuid,
+    required this.senderUuid,
+    required this.receiverUuid,
+    required this.messageStatus,
+    this.text = '',
     this.imageUrl,
-  }) {}
+    this.whenSent,
+  }) {
+    uuid = uuid ?? Uuid().v4();
+    whenSent = whenSent ?? DateTime.now().toUtc();
+  }
+
+  void printMessage() {
+    print('print message:');
+    log('uuid: ${uuid}\n'
+        'senderUuid: ${senderUuid}\n'
+        'receiverUuid: ${receiverUuid}\n'
+        'messageStatus: ${messageStatus}\n'
+        'text: ${text}\n'
+        'imageUrl: ${imageUrl}\n'
+        'whenSent: ${whenSent}\n');
+  }
 }

@@ -2,9 +2,14 @@ import 'package:firebase_database/firebase_database.dart';
 
 class RealtimeDatabaseStorage {
   String fixDataInternalPath(String dataInternalPath) {
-    dataInternalPath = dataInternalPath[0] == '/'
-        ? dataInternalPath.substring(1)
-        : dataInternalPath;
+    while (dataInternalPath[dataInternalPath.length - 1] == '/') {
+      dataInternalPath =
+          dataInternalPath.substring(0, dataInternalPath.length - 1);
+    }
+
+    // dataInternalPath = dataInternalPath[0] == '/'
+    //     ? dataInternalPath.substring(1)
+    //     : dataInternalPath;
     return dataInternalPath;
   }
 

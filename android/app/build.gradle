@@ -27,17 +27,20 @@ if (flutterVersionName == null) {
 
 android {
     namespace "com.yaroslav.messanger_flutter.messanger_flutter"
+    println flutter.compileSdkVersion
+    println flutter.ndkVersion
+
     compileSdk flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
 //        options.compilerArgs << "-Xlint:deprecation"
     }
 
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '17'
     }
 
     sourceSets {

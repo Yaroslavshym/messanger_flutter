@@ -30,6 +30,11 @@ class ChatRepositoryImpl implements ChatRepositoryAbs {
       data: chat.participantsUuidList,
       dataInternalPath: dataInternalPath + '/participantsUuidList',
     );
+    // add participantsUuidList to chat on remote
+    await RealtimeDatabaseStorage().putData(
+      data: chat.messagesUuidList,
+      dataInternalPath: dataInternalPath + '/messagesUuidList',
+    );
 
     // String secondDataInternalPath =
     //     _getDataInternalPath(uuid: chat.uuid ?? Uuid().v4()) +
@@ -66,7 +71,6 @@ class ChatRepositoryImpl implements ChatRepositoryAbs {
   }
 
   Future<List<ChatEntity>> getChats() async {
-    List<ChatEntity> chats = [];
     String dataInternalPath = '/chat';
     Map data = await RealtimeDatabaseStorage()
         .getData(dataInternalPath: dataInternalPath);

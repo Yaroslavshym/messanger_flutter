@@ -15,21 +15,30 @@ class ChatWidget extends StatelessWidget {
       chat.name = 'Interesting chat ${Random().nextInt(100)}';
       ChatUseCases().updateChat(chat: chat);
     }
-    return Container(
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            border: Border.all(color: Colors.white, width: 2),
-            color: Colors.black),
-        height: MediaQuery.sizeOf(context).height * 0.2,
-        width: MediaQuery.sizeOf(context).width * 0.9,
-        // color: Colors.white,
-        child: Column(
-          children: [
-            Text(
-              '${chat.name}',
-              style: TextStyle(color: Colors.white),
-            ),
-          ],
-        ));
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(
+          context,
+          '/ChatPage',
+          arguments: {'chat': chat},
+        );
+      },
+      child: Container(
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(color: Colors.white, width: 2),
+              color: Colors.black),
+          height: MediaQuery.sizeOf(context).height * 0.2,
+          width: MediaQuery.sizeOf(context).width * 0.9,
+          // color: Colors.white,
+          child: Column(
+            children: [
+              Text(
+                '${chat.name}',
+                style: TextStyle(color: Colors.white),
+              ),
+            ],
+          )),
+    );
   }
 }

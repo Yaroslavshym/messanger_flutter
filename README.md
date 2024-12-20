@@ -10,5 +10,19 @@ v* think about files 'repositories'
 
 
 * crete abs+implementation + usecases for message entity
+  * crud
+  * implemetation+abs
 * link message entity to chat entity 
-* 
+
+
+
+
+
+* * * Tests:
+* curd:
+  * message
+    * repository impl
+    * usecases
+  * chat
+    * repository impl
+    * usecases
