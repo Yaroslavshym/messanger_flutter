@@ -3,6 +3,9 @@ class MyUser {
   final String pictureURL;
   final String email;
 
-  MyUser(
-      {required this.givenName, required this.pictureURL, required this.email});
+  MyUser({
+    required this.givenName,
+    required this.pictureURL,
+    required this.email,
+  });
 }
